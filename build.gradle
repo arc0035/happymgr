@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+    maven { url "https://oss.sonatype.org/service/local/staging/deploy/maven2"}
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile ('org.projectlombok:lombok:1.18.6')
+    testCompile ('org.projectlombok:lombok:1.18.6')
+    annotationProcessor 'org.projectlombok:lombok:1.18.6'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.6'
+    compile 'mysql:mysql-connector-java:8.0.13'
+    compile 'com.atomikos:transactions-jdbc:3.7.0'
+    compile 'javax.transaction:jta:1.1'
+    compile ('org.fisco-bcos.java-sdk:java-sdk:2.7.0')
+}
