@@ -2,6 +2,7 @@ package org.example.key;
 
 import org.example.config.EccTypeEnums;
 import org.example.config.KeyEncodeType;
+import org.fisco.bcos.sdk.utils.Numeric;
 
 /**
  * @author aaronchu

@@ -1,9 +1,11 @@
 package org.example.persistence.db;
 
+import com.mysql.cj.jdbc.MysqlXADataSource;
 import org.example.config.KeyMgrConfig;
 import org.example.persistence.KeyPersistence;
 
 import javax.sql.XAConnection;
+import javax.sql.XADataSource;
 import javax.transaction.xa.XAResource;
 import java.io.IOException;
 import java.sql.Connection;

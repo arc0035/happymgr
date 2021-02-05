@@ -1,5 +1,6 @@
 package org.example.persistence.db;
 
+import com.mysql.cj.jdbc.MysqlXAConnection;
 import org.example.config.KeyMgrConfig;
 import org.example.persistence.KeyPersistence;
 import org.example.persistence.PwdPersistence;

@@ -1,5 +1,14 @@
 package org.example;
 
+import com.mysql.cj.jdbc.JdbcConnection;
+import com.mysql.cj.jdbc.MysqlXAConnection;
+import org.example.config.KeyMgrConfig;
+import org.example.persistence.KeyPersistence;
+import org.example.persistence.db.MySqlKeyPersistence;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 /**
  * @author aaronchu
  * @Description
@@ -12,7 +21,11 @@ public class Main {
         String user = "root";
         String pwd = "123456";
 
+        Connection conn = DriverManager.getConnection(url, user, pwd);
+        KeyPersistence kp = new MySqlKeyPersistence(new MysqlXAConnection((JdbcConnection) conn, true), new KeyMgrConfig());
         System.out.println("Complete");
+
+
     }
 
 }
